@@ -21,7 +21,7 @@ public class BaseDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	public JdbcTemplate getJdbcTemplate() {
+	public JdbcTemplate getJdbcTemplate() {  
 		return jdbcTemplate;
 	}
 
