@@ -1,0 +1,398 @@
+[INFO ][20160620 09:05:53,997][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@cf935a: startup date [Mon Jun 20 09:05:53 CST 2016]; root of context hierarchy
+[INFO ][20160620 09:05:54,028][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 09:05:54,200][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20160620 09:05:54,231][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20160620 09:05:54,340][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[WARN ][20160620 09:05:54,340][AbstractApplicationContext:546] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'tcpServerManager' defined in class path resource [spring/spring-context.xml]: Could not resolve placeholder 'parkingTcpServer.pttpPort' in string value "${parkingTcpServer.pttpPort}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'parkingTcpServer.pttpPort' in string value "${parkingTcpServer.pttpPort}"
+[ERROR][20160620 09:05:54,340][DubboProvider:26] == DubboProvider context start error:
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'tcpServerManager' defined in class path resource [spring/spring-context.xml]: Could not resolve placeholder 'parkingTcpServer.pttpPort' in string value "${parkingTcpServer.pttpPort}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'parkingTcpServer.pttpPort' in string value "${parkingTcpServer.pttpPort}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:211)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:177)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:152)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:284)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:166)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:678)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:520)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.eakay.control.parking.tcpserver.DubboProvider.main(DubboProvider.java:22)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'parkingTcpServer.pttpPort' in string value "${parkingTcpServer.pttpPort}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:204)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:178)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:282)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:204)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:141)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:82)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:208)
+	... 9 more
+[INFO ][20160620 09:06:33,247][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@269133: startup date [Mon Jun 20 09:06:33 CST 2016]; root of context hierarchy
+[INFO ][20160620 09:06:33,278][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 09:06:33,434][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20160620 09:06:33,465][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20160620 09:06:33,574][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160620 09:06:34,184][ServiceBean:107]  [DUBBO] The service ready on spring started. service: cn.eakay.control.parking.service.CarControlService, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 09:06:34,277][ServiceConfig:510]  [DUBBO] Export dubbo service cn.eakay.control.parking.service.CarControlService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 09:06:34,277][ServiceConfig:470]  [DUBBO] Export dubbo service cn.eakay.control.parking.service.CarControlService to url dubbo://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=10052&side=provider&timestamp=1466384794199, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 09:06:34,277][ServiceConfig:481]  [DUBBO] Register dubbo service cn.eakay.control.parking.service.CarControlService url dubbo://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=10052&side=provider&timestamp=1466384794199 to registry registry://123.56.236.153:2181/com.alibaba.dubbo.registry.RegistryService?application=car-control-service&dubbo=2.5.3&pid=10052&registry=zookeeper&timestamp=1466384794184, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 09:06:34,402][AbstractServer:69]  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.1.24:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 09:06:34,418][AbstractRegistry:232]  [DUBBO] Load registry store file C:\Users\jxf\.dubbo\dubbo-registry-123.56.236.153.cache, data: {cn.eakay.car.control.service.CarControlService=empty://192.168.1.24:20880/cn.eakay.car.control.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.car.control.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=1696&side=provider&timestamp=1466210101391, cn.eakay.control.parking.service.CarControlService=empty://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=8728&side=provider&timestamp=1466239421071}, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 09:06:34,433][ZkEventThread:64] Starting ZkClient event thread.
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:zookeeper.version=3.4.5-1392090, built on 09/30/2012 17:52 GMT
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:host.name=jxf-PC
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:java.version=1.7.0_40
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:java.vendor=Oracle Corporation
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:java.home=D:\JAVA\jdk\jdk1.7.0_40\jre
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:java.class.path=E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-tcpserver\target\test-classes;E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-tcpserver\target\classes;E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-service\target\classes;E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-config\target\classes;E:\JAVA\Maven\repository\org\springframework\spring-context-support\4.2.4.RELEASE\spring-context-support-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-beans\4.2.4.RELEASE\spring-beans-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-context\4.2.4.RELEASE\spring-context-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-aop\4.2.4.RELEASE\spring-aop-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;E:\JAVA\Maven\repository\org\springframework\spring-expression\4.2.4.RELEASE\spring-expression-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-core\4.2.4.RELEASE\spring-core-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;E:\JAVA\Maven\repository\org\springframework\spring-aspects\4.2.4.RELEASE\spring-aspects-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\aspectj\aspectjweaver\1.8.7\aspectjweaver-1.8.7.jar;E:\JAVA\Maven\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;E:\JAVA\Maven\repository\org\aspectj\aspectjrt\1.8.9\aspectjrt-1.8.9.jar;E:\JAVA\Maven\repository\io\netty\netty-all\4.0.37.Final\netty-all-4.0.37.Final.jar;E:\JAVA\Maven\repository\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;E:\JAVA\Maven\repository\com\alibaba\dubbo\2.5.3\dubbo-2.5.3.jar;E:\JAVA\Maven\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\JAVA\Maven\repository\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;E:\JAVA\Maven\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;E:\JAVA\Maven\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;E:\JAVA\Maven\repository\jline\jline\0.9.94\jline-0.9.94.jar;E:\JAVA\Maven\repository\junit\junit\3.8.1\junit-3.8.1.jar;E:\JAVA\Maven\repository\com\101tec\zkclient\0.3\zkclient-0.3.jar
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:java.library.path=D:\JAVA\jdk\jdk1.7.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\JAVA\jdk\jdk1.7.0_40\jre\bin;D:/JAVA/jdk/jre7/bin/client;D:/JAVA/jdk/jre7/bin;D:/JAVA/jdk/jre7/lib/i386;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec BioExcess\x64;D:\JAVA\jdk\jdk1.7.0_40\bin;D:\JAVA\apache-maven-3.3.9\bin;D:\JAVA\eclipse\eclipse_jee;;.
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:java.io.tmpdir=C:\Users\jxf\AppData\Local\Temp\
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:java.compiler=<NA>
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:os.name=Windows 7
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:os.arch=x86
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:os.version=6.1
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:user.name=jxf
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:user.home=C:\Users\jxf
+[INFO ][20160620 09:06:34,449][Environment:100] Client environment:user.dir=E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-tcpserver
+[INFO ][20160620 09:06:34,449][ZooKeeper:438] Initiating client connection, connectString=123.56.236.153:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@8bddcc
+[INFO ][20160620 09:06:43,512][ClientCnxn$SendThread:966] Opening socket connection to server 123.56.236.153/123.56.236.153:2181. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][20160620 09:06:43,545][ClientCnxn$SendThread:849] Socket connection established to 123.56.236.153/123.56.236.153:2181, initiating session
+[INFO ][20160620 09:06:43,623][ClientCnxn$SendThread:1207] Session establishment complete on server 123.56.236.153/123.56.236.153:2181, sessionid = 0x1549471254d02da, negotiated timeout = 30000
+[INFO ][20160620 09:06:43,623][ZkClient:449] zookeeper state changed (SyncConnected)
+[INFO ][20160620 09:06:43,623][AbstractRegistry:302]  [DUBBO] Register: dubbo://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=10052&side=provider&timestamp=1466384794199, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 09:06:43,794][AbstractRegistry:325]  [DUBBO] Subscribe: provider://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=10052&side=provider&timestamp=1466384794199, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 09:06:43,981][AbstractRegistry:422]  [DUBBO] Notify urls for subscribe url provider://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=10052&side=provider&timestamp=1466384794199, urls: [empty://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=10052&side=provider&timestamp=1466384794199], dubbo version: 2.5.3, current host: 127.0.0.1
+[WARN ][20160620 09:08:54,258][Slf4JLogger:151] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at cn.eakay.control.parking.tcpserver.util.StringUtils.splitParam(StringUtils.java:11)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:27)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:1)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:240)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1280)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:890)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:564)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:505)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:419)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:391)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:112)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:145)
+	at java.lang.Thread.run(Thread.java:724)
+[INFO ][20160620 10:38:39,099][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@d39c9f: startup date [Mon Jun 20 10:38:39 CST 2016]; root of context hierarchy
+[INFO ][20160620 10:38:39,129][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 10:38:39,279][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20160620 10:38:39,299][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20160620 10:38:39,399][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[WARN ][20160620 10:38:39,910][AbstractApplicationContext:546] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cn.eakay.control.parking.service.CarControlService': Cannot resolve reference to bean 'carControlService' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'carControlService' is defined
+[ERROR][20160620 10:38:39,930][SpringProvider:26] == DubboProvider context start error:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cn.eakay.control.parking.service.CarControlService': Cannot resolve reference to bean 'carControlService' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'carControlService' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1481)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1226)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.eakay.control.parking.tcpserver.SpringProvider.main(SpringProvider.java:22)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'carControlService' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:698)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 15 more
+[INFO ][20160620 10:38:43,031][AbstractConfig$1:450]  [DUBBO] Run shutdown hook now., dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 10:38:43,031][AbstractRegistryFactory:63]  [DUBBO] Close all registries [], dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 10:38:49,904][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@d39c9f: startup date [Mon Jun 20 10:38:49 CST 2016]; root of context hierarchy
+[INFO ][20160620 10:38:49,934][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 10:38:50,084][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20160620 10:38:50,104][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20160620 10:38:50,204][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[WARN ][20160620 10:38:50,715][AbstractApplicationContext:546] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cn.eakay.control.parking.service.CarControlService': Cannot resolve reference to bean 'carControlService' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'carControlService' is defined
+[ERROR][20160620 10:38:50,735][SpringProvider:26] == DubboProvider context start error:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cn.eakay.control.parking.service.CarControlService': Cannot resolve reference to bean 'carControlService' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'carControlService' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1481)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1226)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.eakay.control.parking.tcpserver.SpringProvider.main(SpringProvider.java:22)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'carControlService' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:698)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 15 more
+[INFO ][20160620 10:38:53,845][AbstractConfig$1:450]  [DUBBO] Run shutdown hook now., dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 10:38:53,845][AbstractRegistryFactory:63]  [DUBBO] Close all registries [], dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160620 11:01:18,403][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1af7c57: startup date [Mon Jun 20 11:01:18 CST 2016]; root of context hierarchy
+[INFO ][20160620 11:01:18,443][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 11:01:18,643][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[WARN ][20160620 11:06:48,375][DefaultChannelPipeline:1088] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:41)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:1)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:240)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1280)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:890)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:564)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:505)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:419)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:391)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:112)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:145)
+	at java.lang.Thread.run(Thread.java:724)
+[WARN ][20160620 11:06:49,197][DefaultChannelPipeline:1088] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:41)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:1)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:240)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1280)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:890)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:564)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:505)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:419)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:391)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:112)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:145)
+	at java.lang.Thread.run(Thread.java:724)
+[WARN ][20160620 11:06:50,207][DefaultChannelPipeline:1088] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:41)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:1)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:240)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1280)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:890)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:564)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:505)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:419)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:391)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:112)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:145)
+	at java.lang.Thread.run(Thread.java:724)
+[INFO ][20160620 11:09:36,494][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6c4fe: startup date [Mon Jun 20 11:09:36 CST 2016]; root of context hierarchy
+[INFO ][20160620 11:09:36,534][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 11:09:36,774][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[WARN ][20160620 11:12:44,618][DefaultChannelPipeline:1088] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1875)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:41)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:1)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:240)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1280)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:890)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:564)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:505)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:419)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:391)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:112)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:145)
+	at java.lang.Thread.run(Thread.java:724)
+[INFO ][20160620 11:33:14,508][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1af7c57: startup date [Mon Jun 20 11:33:14 CST 2016]; root of context hierarchy
+[INFO ][20160620 11:33:14,548][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 11:33:14,778][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160620 11:34:09,583][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@269133: startup date [Mon Jun 20 11:34:09 CST 2016]; root of context hierarchy
+[INFO ][20160620 11:34:09,623][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 11:34:09,863][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160620 11:36:38,796][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1af7c57: startup date [Mon Jun 20 11:36:38 CST 2016]; root of context hierarchy
+[INFO ][20160620 11:36:38,836][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 11:36:39,056][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[WARN ][20160620 11:40:45,049][DefaultChannelPipeline:1088] An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at cn.eakay.control.parking.tcpserver.util.StringUtils.splitParam(StringUtils.java:11)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:44)
+	at cn.eakay.control.parking.http.HTTPServerhandler.channelRead0(HTTPServerhandler.java:1)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:240)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1280)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:890)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:564)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:505)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:419)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:391)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:112)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:145)
+	at java.lang.Thread.run(Thread.java:724)
+[INFO ][20160620 11:43:04,216][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1af7c57: startup date [Mon Jun 20 11:43:04 CST 2016]; root of context hierarchy
+[INFO ][20160620 11:43:04,246][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 11:43:04,466][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160620 11:56:30,652][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@269133: startup date [Mon Jun 20 11:56:30 CST 2016]; root of context hierarchy
+[INFO ][20160620 11:56:30,692][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 11:56:30,922][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160620 11:57:58,260][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1af7c57: startup date [Mon Jun 20 11:57:58 CST 2016]; root of context hierarchy
+[INFO ][20160620 11:57:58,300][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 11:57:58,510][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160620 11:59:43,518][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@663cdf: startup date [Mon Jun 20 11:59:43 CST 2016]; root of context hierarchy
+[INFO ][20160620 11:59:43,558][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 11:59:43,798][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160620 13:31:42,519][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1af7c57: startup date [Mon Jun 20 13:31:42 CST 2016]; root of context hierarchy
+[INFO ][20160620 13:31:42,559][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 13:31:42,779][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160620 13:32:12,230][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@269133: startup date [Mon Jun 20 13:32:12 CST 2016]; root of context hierarchy
+[INFO ][20160620 13:32:12,270][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 13:32:12,510][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160620 13:45:27,838][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1af7c57: startup date [Mon Jun 20 13:45:27 CST 2016]; root of context hierarchy
+[INFO ][20160620 13:45:27,888][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 13:45:28,118][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160620 13:48:50,808][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@663cdf: startup date [Mon Jun 20 13:48:50 CST 2016]; root of context hierarchy
+[INFO ][20160620 13:48:50,857][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160620 13:48:51,190][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]

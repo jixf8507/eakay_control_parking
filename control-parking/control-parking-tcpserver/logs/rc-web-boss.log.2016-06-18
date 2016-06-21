@@ -1,0 +1,144 @@
+[INFO ][20160618 13:45:24,187][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@537d55: startup date [Sat Jun 18 13:45:24 CST 2016]; root of context hierarchy
+[INFO ][20160618 13:45:24,227][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160618 13:45:24,397][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20160618 13:45:24,437][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20160618 13:45:24,557][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160618 13:45:25,088][ServiceBean:107]  [DUBBO] The service ready on spring started. service: cn.eakay.control.paring.service.CarControlService, dubbo version: 2.5.3, current host: 127.0.0.1
+[ERROR][20160618 13:45:25,088][DubboProvider:26] == DubboProvider context start error:
+java.lang.IllegalStateException: cn.eakay.control.paring.service.CarControlService
+	at com.alibaba.dubbo.config.ServiceConfig.doExport(ServiceConfig.java:200)
+	at com.alibaba.dubbo.config.ServiceConfig.export(ServiceConfig.java:143)
+	at com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:109)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:163)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:136)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:381)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:335)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:855)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at cn.eakay.control.parking.tcpserver.DubboProvider.main(DubboProvider.java:22)
+Caused by: java.lang.ClassNotFoundException: cn.eakay.control.paring.service.CarControlService
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at com.alibaba.dubbo.config.ServiceConfig.doExport(ServiceConfig.java:197)
+	... 11 more
+[INFO ][20160618 13:46:19,781][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@537d55: startup date [Sat Jun 18 13:46:19 CST 2016]; root of context hierarchy
+[INFO ][20160618 13:46:19,821][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160618 13:46:19,981][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20160618 13:46:20,011][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20160618 13:46:20,131][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160618 13:46:20,662][ServiceBean:107]  [DUBBO] The service ready on spring started. service: cn.eakay.control.parking.service.CarControlService, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 13:46:20,762][ServiceConfig:510]  [DUBBO] Export dubbo service cn.eakay.control.parking.service.CarControlService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 13:46:20,762][ServiceConfig:470]  [DUBBO] Export dubbo service cn.eakay.control.parking.service.CarControlService to url dubbo://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=6340&side=provider&timestamp=1466228780682, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 13:46:20,762][ServiceConfig:481]  [DUBBO] Register dubbo service cn.eakay.control.parking.service.CarControlService url dubbo://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=6340&side=provider&timestamp=1466228780682 to registry registry://123.56.236.153:2181/com.alibaba.dubbo.registry.RegistryService?application=car-control-service&dubbo=2.5.3&pid=6340&registry=zookeeper&timestamp=1466228780672, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 13:46:20,872][AbstractServer:69]  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.1.24:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 13:46:20,892][AbstractRegistry:232]  [DUBBO] Load registry store file C:\Users\jxf\.dubbo\dubbo-registry-123.56.236.153.cache, data: {cn.eakay.car.control.service.CarControlService=empty://192.168.1.24:20880/cn.eakay.car.control.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.car.control.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=1696&side=provider&timestamp=1466210101391}, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 13:46:20,902][ZkEventThread:64] Starting ZkClient event thread.
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:zookeeper.version=3.4.5-1392090, built on 09/30/2012 17:52 GMT
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:host.name=jxf-PC
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:java.version=1.7.0_40
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:java.vendor=Oracle Corporation
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:java.home=D:\JAVA\jdk\jre7
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:java.class.path=E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-tcpserver\target\test-classes;E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-tcpserver\target\classes;E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-service\target\classes;E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-config\target\classes;E:\JAVA\Maven\repository\org\springframework\spring-context-support\4.2.4.RELEASE\spring-context-support-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-beans\4.2.4.RELEASE\spring-beans-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-context\4.2.4.RELEASE\spring-context-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-aop\4.2.4.RELEASE\spring-aop-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;E:\JAVA\Maven\repository\org\springframework\spring-expression\4.2.4.RELEASE\spring-expression-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-core\4.2.4.RELEASE\spring-core-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;E:\JAVA\Maven\repository\org\springframework\spring-aspects\4.2.4.RELEASE\spring-aspects-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\aspectj\aspectjweaver\1.8.7\aspectjweaver-1.8.7.jar;E:\JAVA\Maven\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;E:\JAVA\Maven\repository\org\aspectj\aspectjrt\1.8.9\aspectjrt-1.8.9.jar;E:\JAVA\Maven\repository\io\netty\netty-all\4.0.37.Final\netty-all-4.0.37.Final.jar;E:\JAVA\Maven\repository\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;E:\JAVA\Maven\repository\com\alibaba\dubbo\2.5.3\dubbo-2.5.3.jar;E:\JAVA\Maven\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\JAVA\Maven\repository\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;E:\JAVA\Maven\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;E:\JAVA\Maven\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;E:\JAVA\Maven\repository\jline\jline\0.9.94\jline-0.9.94.jar;E:\JAVA\Maven\repository\junit\junit\3.8.1\junit-3.8.1.jar;E:\JAVA\Maven\repository\com\101tec\zkclient\0.3\zkclient-0.3.jar
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:java.library.path=D:\JAVA\jdk\jre7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/JAVA/jdk/jre7/bin/client;D:/JAVA/jdk/jre7/bin;D:/JAVA/jdk/jre7/lib/i386;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec BioExcess\x64;D:\JAVA\jdk\jdk1.7.0_40\bin;D:\JAVA\apache-maven-3.3.9\bin;D:\JAVA\eclipse\eclipse_jee;;.
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:java.io.tmpdir=C:\Users\jxf\AppData\Local\Temp\
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:java.compiler=<NA>
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:os.name=Windows 7
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:os.arch=x86
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:os.version=6.1
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:user.name=jxf
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:user.home=C:\Users\jxf
+[INFO ][20160618 13:46:20,912][Environment:100] Client environment:user.dir=E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-tcpserver
+[INFO ][20160618 13:46:20,912][ZooKeeper:438] Initiating client connection, connectString=123.56.236.153:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@163aaf1
+[INFO ][20160618 13:46:29,943][ClientCnxn$SendThread:966] Opening socket connection to server 123.56.236.153/123.56.236.153:2181. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][20160618 13:46:29,974][ClientCnxn$SendThread:849] Socket connection established to 123.56.236.153/123.56.236.153:2181, initiating session
+[INFO ][20160618 13:46:30,034][ClientCnxn$SendThread:1207] Session establishment complete on server 123.56.236.153/123.56.236.153:2181, sessionid = 0x1549471254d02d6, negotiated timeout = 30000
+[INFO ][20160618 13:46:30,034][ZkClient:449] zookeeper state changed (SyncConnected)
+[INFO ][20160618 13:46:30,034][AbstractRegistry:302]  [DUBBO] Register: dubbo://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=6340&side=provider&timestamp=1466228780682, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 13:46:30,204][AbstractRegistry:325]  [DUBBO] Subscribe: provider://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=6340&side=provider&timestamp=1466228780682, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 13:46:30,404][AbstractRegistry:422]  [DUBBO] Notify urls for subscribe url provider://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=6340&side=provider&timestamp=1466228780682, urls: [empty://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=6340&side=provider&timestamp=1466228780682], dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 16:43:40,180][AbstractApplicationContext:578] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@cf935a: startup date [Sat Jun 18 16:43:40 CST 2016]; root of context hierarchy
+[INFO ][20160618 16:43:40,210][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20160618 16:43:40,390][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20160618 16:43:40,420][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20160618 16:43:40,530][PropertiesLoaderSupport:172] Loading properties file from class path resource [parkingTcpServer.properties]
+[INFO ][20160618 16:43:41,051][ServiceBean:107]  [DUBBO] The service ready on spring started. service: cn.eakay.control.parking.service.CarControlService, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 16:43:41,141][ServiceConfig:510]  [DUBBO] Export dubbo service cn.eakay.control.parking.service.CarControlService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 16:43:41,141][ServiceConfig:470]  [DUBBO] Export dubbo service cn.eakay.control.parking.service.CarControlService to url dubbo://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=8728&side=provider&timestamp=1466239421071, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 16:43:41,141][ServiceConfig:481]  [DUBBO] Register dubbo service cn.eakay.control.parking.service.CarControlService url dubbo://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=8728&side=provider&timestamp=1466239421071 to registry registry://123.56.236.153:2181/com.alibaba.dubbo.registry.RegistryService?application=car-control-service&dubbo=2.5.3&pid=8728&registry=zookeeper&timestamp=1466239421051, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 16:43:41,261][AbstractServer:69]  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.1.24:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 16:43:41,271][AbstractRegistry:232]  [DUBBO] Load registry store file C:\Users\jxf\.dubbo\dubbo-registry-123.56.236.153.cache, data: {cn.eakay.car.control.service.CarControlService=empty://192.168.1.24:20880/cn.eakay.car.control.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.car.control.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=1696&side=provider&timestamp=1466210101391, cn.eakay.control.parking.service.CarControlService=empty://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=6340&side=provider&timestamp=1466228780682}, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 16:43:41,281][ZkEventThread:64] Starting ZkClient event thread.
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:zookeeper.version=3.4.5-1392090, built on 09/30/2012 17:52 GMT
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:host.name=jxf-PC
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:java.version=1.7.0_40
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:java.vendor=Oracle Corporation
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:java.home=D:\JAVA\jdk\jdk1.7.0_40\jre
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:java.class.path=E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-tcpserver\target\test-classes;E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-tcpserver\target\classes;E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-service\target\classes;E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-config\target\classes;E:\JAVA\Maven\repository\org\springframework\spring-context-support\4.2.4.RELEASE\spring-context-support-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-beans\4.2.4.RELEASE\spring-beans-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-context\4.2.4.RELEASE\spring-context-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-aop\4.2.4.RELEASE\spring-aop-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;E:\JAVA\Maven\repository\org\springframework\spring-expression\4.2.4.RELEASE\spring-expression-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\springframework\spring-core\4.2.4.RELEASE\spring-core-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;E:\JAVA\Maven\repository\org\springframework\spring-aspects\4.2.4.RELEASE\spring-aspects-4.2.4.RELEASE.jar;E:\JAVA\Maven\repository\org\aspectj\aspectjweaver\1.8.7\aspectjweaver-1.8.7.jar;E:\JAVA\Maven\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;E:\JAVA\Maven\repository\org\aspectj\aspectjrt\1.8.9\aspectjrt-1.8.9.jar;E:\JAVA\Maven\repository\io\netty\netty-all\4.0.37.Final\netty-all-4.0.37.Final.jar;E:\JAVA\Maven\repository\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;E:\JAVA\Maven\repository\com\alibaba\dubbo\2.5.3\dubbo-2.5.3.jar;E:\JAVA\Maven\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;E:\JAVA\Maven\repository\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;E:\JAVA\Maven\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;E:\JAVA\Maven\repository\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;E:\JAVA\Maven\repository\jline\jline\0.9.94\jline-0.9.94.jar;E:\JAVA\Maven\repository\junit\junit\3.8.1\junit-3.8.1.jar;E:\JAVA\Maven\repository\com\101tec\zkclient\0.3\zkclient-0.3.jar
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:java.library.path=D:\JAVA\jdk\jdk1.7.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/JAVA/jdk/jre7/bin/client;D:/JAVA/jdk/jre7/bin;D:/JAVA/jdk/jre7/lib/i386;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec BioExcess\x64;D:\JAVA\jdk\jdk1.7.0_40\bin;D:\JAVA\apache-maven-3.3.9\bin;D:\JAVA\eclipse\eclipse_jee;;.
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:java.io.tmpdir=C:\Users\jxf\AppData\Local\Temp\
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:java.compiler=<NA>
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:os.name=Windows 7
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:os.arch=x86
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:os.version=6.1
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:user.name=jxf
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:user.home=C:\Users\jxf
+[INFO ][20160618 16:43:41,291][Environment:100] Client environment:user.dir=E:\JAVA\Eclipse\Control_ws\control-parking\control-parking-tcpserver
+[INFO ][20160618 16:43:41,291][ZooKeeper:438] Initiating client connection, connectString=123.56.236.153:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@1ceed49
+[INFO ][20160618 16:44:02,305][ClientCnxn$SendThread:966] Opening socket connection to server 123.56.236.153/123.56.236.153:2181. Will not attempt to authenticate using SASL (unknown error)
+[WARN ][20160618 16:44:23,321][ClientCnxn$SendThread:1089] Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+[INFO ][20160618 16:44:24,422][ClientCnxn$SendThread:966] Opening socket connection to server 123.56.236.153/123.56.236.153:2181. Will not attempt to authenticate using SASL (unknown error)
+[WARN ][20160618 16:44:45,433][ClientCnxn$SendThread:1089] Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+[INFO ][20160618 16:44:46,534][ClientCnxn$SendThread:966] Opening socket connection to server 123.56.236.153/123.56.236.153:2181. Will not attempt to authenticate using SASL (unknown error)
+[WARN ][20160618 16:45:07,536][ClientCnxn$SendThread:1089] Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+[INFO ][20160618 16:45:08,637][ClientCnxn$SendThread:966] Opening socket connection to server 123.56.236.153/123.56.236.153:2181. Will not attempt to authenticate using SASL (unknown error)
+[WARN ][20160618 16:45:29,638][ClientCnxn$SendThread:1089] Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+[INFO ][20160618 16:45:30,739][ClientCnxn$SendThread:966] Opening socket connection to server 123.56.236.153/123.56.236.153:2181. Will not attempt to authenticate using SASL (unknown error)
+[WARN ][20160618 16:45:51,740][ClientCnxn$SendThread:1089] Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+[INFO ][20160618 16:45:52,841][ClientCnxn$SendThread:966] Opening socket connection to server 123.56.236.153/123.56.236.153:2181. Will not attempt to authenticate using SASL (unknown error)
+[WARN ][20160618 16:46:13,841][ClientCnxn$SendThread:1089] Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+[INFO ][20160618 16:46:14,942][ClientCnxn$SendThread:966] Opening socket connection to server 123.56.236.153/123.56.236.153:2181. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][20160618 16:46:14,973][ClientCnxn$SendThread:849] Socket connection established to 123.56.236.153/123.56.236.153:2181, initiating session
+[INFO ][20160618 16:46:15,023][ClientCnxn$SendThread:1207] Session establishment complete on server 123.56.236.153/123.56.236.153:2181, sessionid = 0x1549471254d02d7, negotiated timeout = 30000
+[INFO ][20160618 16:46:15,023][ZkClient:449] zookeeper state changed (SyncConnected)
+[INFO ][20160618 16:46:15,023][AbstractRegistry:302]  [DUBBO] Register: dubbo://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=8728&side=provider&timestamp=1466239421071, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 16:46:15,213][AbstractRegistry:325]  [DUBBO] Subscribe: provider://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=8728&side=provider&timestamp=1466239421071, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20160618 16:46:15,413][AbstractRegistry:422]  [DUBBO] Notify urls for subscribe url provider://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=8728&side=provider&timestamp=1466239421071, urls: [empty://192.168.1.24:20880/cn.eakay.control.parking.service.CarControlService?anyhost=true&application=car-control-service&category=configurators&check=false&dubbo=2.5.3&interface=cn.eakay.control.parking.service.CarControlService&methods=getParkingDevices,query,getDervicePorts,down,up&pid=8728&side=provider&timestamp=1466239421071], dubbo version: 2.5.3, current host: 127.0.0.1
